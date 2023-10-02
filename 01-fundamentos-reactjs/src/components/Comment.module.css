@@ -1,0 +1,90 @@
+.comment {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.comment>img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+}
+
+.commentBox {
+   flex: 1; /* when inside another div with display: flex, the div with flex: 1 makes the child div occupy the maximun space possible */
+}
+
+.commentContent {
+    background: var(--gray-700);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.commentContent header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.authorAndTime strong {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.authorAndTime time {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--gray-400);
+}
+
+.commentContent header button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+     line-height: 0;  /* this will make the OUTLINE of a button with an IMAGE to match each other*/
+     /* font-size: 0;  THIS IS ANOTHER OPTION TO FIX THE EXACT SAME THING AS THE LINE ABOVE*/
+     border-radius: 2px;  /*  MAKES THE OUTLINE BORDER OF THE ICON TO BE MORE ROUNDED*/
+}
+
+.commentContent header button:hover {
+    color: var(--red-500);
+}
+
+.commentContent p {
+    margin-top: 1rem;
+    color: var(--gray-300);
+}
+
+.commentBox footer {
+    margin-top: 1rem;
+}
+
+.commentBox footer button {
+    background: transparent;
+     border: 0; /*THIS COMMAND "RESETS" THE DEFAULT BORDER OF ITENS IN HTML */
+     color: var(--gray-400);
+     cursor: pointer;
+
+     display: flex;
+     align-items: center;
+
+     border-radius: 2px;
+}
+
+.commentBox footer button:hover {
+    color: var(--green-300);
+
+}
+
+.commentBox footer button svg {
+    margin-right: 0.5rem;
+}
+
+.commentBox footer button span::before { /* the ::before "creates" a new element inside the span and receives the styles below */
+    content: "\2022";
+    padding: 0 0.25 ;
+}
