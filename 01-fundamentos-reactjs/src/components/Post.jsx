@@ -1,7 +1,12 @@
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
-export function Post() {
+
+
+
+export function Post(props) {
+    console.log(props)
+
     return (
         <article className={styles.post}>
             <header>
@@ -24,8 +29,8 @@ export function Post() {
                 <p><a href="">jane.design/doctorcare</a></p>
 
                 <p>
-                    <a href="">#novoprojeto</a>{' '} 
-                    <a href="">#nlw </a>{' '} 
+                    <a href="">#novoprojeto</a>{' '}
+                    <a href="">#nlw </a>{' '}
                     <a href="">#rocketseat</a>
                 </p>
             </div>
@@ -33,7 +38,7 @@ export function Post() {
             <form className={styles.commentForm}>
                 <strong> Deixe seu feedback</strong>
 
-                <textarea 
+                <textarea
                     placeholder='Deixe um comentario'
                 />
 
