@@ -1,45 +1,89 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR'
+
+
+import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
+import { useState } from 'react';
+
+// estado = variaveis que eu quero que o componente monitore
+
+export function Post({ author, publishedAt, content }) {
+    const [comments, setComments] = useState(['Post muito bacana, hein?!'])
+
+    const [newCommentText, setNewCommentText] = useState('')
+
+    const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+        locale: ptBR,
+    })
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true,
+    })
 
 
 
+    // THI IS AN EXAMPLE ON HOW TO WORK WITH DATES USING THE INTL FROM JS new Intl.DateTimeFormat('pt-BR', {
+    //     day: '2-digit',
+    //     month: 'long',
+    //     hour: '2-digit',
+    //     minute: '2-digit',
 
-export function Post(props) {
-    console.log(props)
+    // }).format(publishedAt)
+
+    function handleCreateNewComment() {
+        event.preventDefault() //this line prevents the default action from the form to redirect/refresh a page
+
+
+        setComments([...comments, newCommentText]);
+        setNewCommentText('');
+
+    }
+
+    function handleNewCommentChange() {
+        setNewCommentText(event.target.value);
+    }
+
 
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://images.unsplash.com/photo-1692003122872-6400308772d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
+                    {/* property hasBorder is understood by react as "being true" if passed as is is mentioned in this line. There is no need to say hasBorder={true}.However, in this case, were setting hasBorder default value inside the Avatar component */}
+
+                    <Avatar hasBorder src={author.avatarUrl} />
+
                     <div className={styles.authorInfo}>
-                        <strong>Diego Fernandes</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">Publicado há uma hora</time>
+                <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+                    {publishedDateRelativeToNow}
+                </time>
             </header>
 
             <div className={styles.content}>
-                <p>Fala galeraa 👋</p>
-
-                <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da               Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-
-                <p><a href="">jane.design/doctorcare</a></p>
-
-                <p>
-                    <a href="">#novoprojeto</a>{' '}
-                    <a href="">#nlw </a>{' '}
-                    <a href="">#rocketseat</a>
-                </p>
+                {content.map(line => {
+                    if (line.type === 'paragraph') {
+                        return <p>{line.content}</p>;
+                    } else if (line.type === 'link') {
+                        return <p><a href="#">{line.content}</a></p>;
+                    }
+                })}
             </div>
 
-            <form className={styles.commentForm}>
+            <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong> Deixe seu feedback</strong>
 
                 <textarea
+                    name="comment"
                     placeholder='Deixe um comentario'
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
                 />
 
                 <footer>
@@ -48,9 +92,9 @@ export function Post(props) {
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
-                <Comment />
-                <Comment />
+                {comments.map(comment => {
+                    return <Comment content={comment}/>
+                })}
             </div>
         </article>
 

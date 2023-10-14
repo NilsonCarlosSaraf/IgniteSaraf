@@ -6,6 +6,8 @@ import styles from './App.module.css';
 
 import './global.css';
 
+/* in situations where you have content in multiple lines, you can make every single one of them a object*/
+
 const posts = [
   {
     id: 1,
@@ -51,7 +53,7 @@ export function App() {
             return (
             <Post
             author={post.author}
-            contet={post.content}
+            content={post.content}
             publishedAt={post.publishedAt}
             />)
           })}
