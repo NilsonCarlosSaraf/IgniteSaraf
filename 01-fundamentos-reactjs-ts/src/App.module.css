@@ -1,0 +1,27 @@
+.wrapper {
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    /* essa linha faz com que, caseo a tela seja diminuida, o conteudo nao fique "esmagado" e respeite certa distancia das margens */
+
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    /* A primeira coluna tem 256px fixos e a seguda vai se adaptar pro tamanho da tela com 1fr(fr e a unidade usada no grid pra dizer que algo e) */
+    gap: 2rem;
+    /*espacamento entre as colunas do grid*/
+    align-items: flex-start;
+    /* faz com  que os items por PADRAO fiquem alinhados no topo da tela, e nao que sejam esticados como default*/
+
+}
+  
+/* THE STYLING ELOW IS APPLIED ONLY IF MAX-WIDTH: IE LOWER TAN 786XM WHAT MAKES IT APPLY TO MOBILE */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
