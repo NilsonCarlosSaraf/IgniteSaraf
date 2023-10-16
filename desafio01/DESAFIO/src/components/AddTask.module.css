@@ -1,0 +1,19 @@
+.divAdd {
+    grid-row: auto;
+    gap: 0.5rem;
+}
+
+.buttonAdd {
+    background-color: var(--bluedark);
+    opacity: 100%;
+    border-radius: 8px;
+    padding: 1rem 1rem 1rem 1rem ;
+    color: var(--gray-100);
+}
+
+.inputAdd {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--gray-400);
+    color: var(--gray-300);
+}
