@@ -1,0 +1,17 @@
+.logo {
+    display: flex;
+    gap: 8px;
+    color: aliceblue;
+    align-items: center;
+    
+}
+
+.rocketStyle {
+    width: 22px;
+    height: 36px;
+}
+
+.todoStyle {
+    width: 92px;
+    height: 48px;
+}

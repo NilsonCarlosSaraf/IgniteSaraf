@@ -1,15 +1,22 @@
-import { AddTask } from "./components/AddTask"
+import { AddTask } from "./components/AddTask";
+
+
+import styles from './App.module.css';
 
 import './global.css';
+import { AppTitle } from "./components/AppTitle";
+import { CreateTask } from "./components/CreateTask";
 
 function App() {
 
   return (
-    <div>
-      <header>
+    <body>
+      <header className={styles.styleHeader}>
+        <AppTitle />
         <AddTask />
       </header>
-    </div>
+      <CreateTask />
+    </body>
   )
 }
 
