@@ -1,0 +1,33 @@
+.cardContainer {
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.cardContainer button {
+    background-color: transparent;
+    color: var(--Gray-100);
+    border-radius: 16px;
+    line-height: 0;
+
+}
+
+.cardContainer button:hover {
+    color: var(--blue);
+}
+
+.cardContainer p {
+    color: var(--Gray-100);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.checkBox {
+    color: red;
+    border-radius: 8px;
+}

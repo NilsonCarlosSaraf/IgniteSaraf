@@ -33,5 +33,14 @@
     padding: 1rem 1rem 1rem 1rem;
     color: var(--gray-100);
     width: 90px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    
+}
 
+.buttonAdd:hover {
+    background-color: var(--blue);
 }

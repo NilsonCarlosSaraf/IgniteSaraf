@@ -1,9 +1,8 @@
 .logo {
     display: flex;
     gap: 8px;
-    color: aliceblue;
     align-items: center;
-    
+    align-content: center;
 }
 
 .rocketStyle {
