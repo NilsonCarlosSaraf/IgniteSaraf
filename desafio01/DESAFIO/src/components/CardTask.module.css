@@ -9,8 +9,11 @@
 .cardContainer button {
     background-color: transparent;
     color: var(--Gray-100);
+    border: 0;
     border-radius: 16px;
     line-height: 0;
+    align-items: start;
+
 
 }
 
@@ -27,7 +30,18 @@
     line-height: 140%;
 }
 
-.checkBox {
-    color: red;
-    border-radius: 8px;
+.checkBoxContainer {
+    border: 2px solid var(--blue);
+    height: 16px;
+    min-width: 16px;
+    border-radius: 50%;
+}
+
+.checkBoxContainerTick {
+    background: var(--purpleDark);
+    border: 2px solid var(--purpleDark);
+    height: 16px;
+    min-width: 16px;
+    border-radius: 50%;
+    color: var(--gray-100);
 }

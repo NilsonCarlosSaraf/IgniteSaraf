@@ -14,7 +14,7 @@ export function CreateTask() {
                 <div className={styles.taskContainer}>
                     <div>Concluidas</div>
                     <div
-                        className={styles.counter}>0</div>
+                        className={styles.counter}>2 de 5</div>
                 </div>
             </div>
             <div className={styles.bodyTasks}>

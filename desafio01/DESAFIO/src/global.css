@@ -13,6 +13,7 @@
 
 
     --purple: #8284FA;
+    --purpleDark: #5E60CE;
 }
 
 body {
@@ -26,7 +27,6 @@ body {
 :focus {
     outline: transparent;
     /* removes the default focus*/
-    box-shadow: 0 0 0 2px var(--blue);
 }
 
 * {
