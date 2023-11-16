@@ -1,0 +1,53 @@
+.appWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.appHeader {
+    background-color: var(--gray-700);
+    width: 100%;
+    height: 12.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.appMainSenction {
+    padding-top: 91px;
+}
+
+.appInputSection {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    bottom: -27px;
+}
+
+.appInputSection input {
+    border-radius: 8px;
+    width: 638px;
+    height: 54px;
+    border: 0;
+}
+
+.appInputSection button {
+    height: 100%;
+    background: var(--blue-dark);
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    width: 90px;
+    height: 54px;
+    gap: 8px;
+}
+
+.appInputSection button:hover {
+    background: var(--blue);
+
+
+}

@@ -1,0 +1,5 @@
+.todoStyle {
+    justify-items: center;
+    display: flex;
+    gap: 8px;
+}
