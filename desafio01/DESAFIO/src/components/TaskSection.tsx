@@ -1,5 +1,6 @@
 import { ClipboardText } from '@phosphor-icons/react'
 import styles from './TaskSection.module.css'
+import { TaskCard } from './TaskCard'
 
 export function TaskSection() {
     return (
@@ -14,6 +15,7 @@ export function TaskSection() {
                     <p>Você ainda não tem tarefas cadastradas</p>
                     <p>Crie tarefas e organize seus itens</p>
                 </div>
+                <TaskCard />
             </div>
         </div >
     )
