@@ -3,13 +3,24 @@
     justify-content: center;
     padding: 16px;
     background: var(--gray-400);
+    border-radius: 8px;
 }
 
-.taskCheckBox {
+.taskCheckBoxUntoggled {
     border: solid 2px var(--blue);
     height: 12px;
     min-width: 12px;
     border-radius: 50%;
 }
 
-.taskContent {}
+.taskCheckBoxToggled {
+    background: var(--purple-dark);
+    height: 12px;
+    min-width: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+
+}

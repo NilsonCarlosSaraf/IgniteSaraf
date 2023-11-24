@@ -1,11 +1,22 @@
-import { Trash } from "@phosphor-icons/react"
+import { Check, Trash } from "@phosphor-icons/react"
 import style from "./TaskCard.module.css"
+import { useState } from "react"
 
 export function TaskCard() {
+    function handleTaskStatus() {
+        if (taskStatus) {
+            setTaskStatus(false)
+        } else {
+            setTaskStatus(true)
+        }
+    }
+
+    const [taskStatus, setTaskStatus] = useState<boolean>()
+
     return (
         <div className={style.taskCard}>
-            <div className={style.taskCheckBox} />
-            <div className={style.taskContent}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem non iure veniam. Debitis consectetur maiores exercitationem sapiente, neque dolores soluta id aut ex sed deserunt harum ipsum quia, accusantium fuga.</div>
+            {taskStatus ? <div className={style.taskCheckBoxUntoggled} onClick={handleTaskStatus} /> : <div className={style.taskCheckBoxToggled} onClick={handleTaskStatus}><Check /></div>}
+            <div style={taskStatus ? { textDecoration: 'none' } : { textDecoration: 'line-through' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem non iure veniam. Debitis consectetur maiores exercitationem sapiente, neque dolores soluta id aut ex sed deserunt harum ipsum quia, accusantium fuga.</div>
             <div><Trash color='var(--gray-300)' /></div>
         </div>
     )
