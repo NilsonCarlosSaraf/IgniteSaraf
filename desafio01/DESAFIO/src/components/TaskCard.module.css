@@ -6,6 +6,21 @@
     border-radius: 8px;
 }
 
+.taskCard button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    line-height: 0;
+    padding: 0;
+    display: flex;
+    border-radius: 2px;
+    height: 14px;
+}
+
+.taskCard button:hover {
+    color: var(--blue);
+}
+
 .taskCheckBoxUntoggled {
     border: solid 2px var(--blue);
     height: 12px;
