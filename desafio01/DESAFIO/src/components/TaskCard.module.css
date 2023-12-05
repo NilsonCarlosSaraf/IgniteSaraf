@@ -1,9 +1,11 @@
 .taskCard {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 16px;
     background: var(--gray-400);
     border-radius: 8px;
+    width: 46rem;
+
 }
 
 .taskCard button {
@@ -36,6 +38,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1px;
+    flex-wrap: wrap;
 
+}
+
+.cardText {
+    text-decoration: none;
+}
+
+.cardTextCrossed {
+    text-decoration: line-through;
 }
