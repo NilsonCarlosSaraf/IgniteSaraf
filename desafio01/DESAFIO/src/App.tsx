@@ -15,8 +15,9 @@ function App() {
   }
 
   const [newText, setNewText] = useState([
-    'teste 1',
-    'teste 2'])
+    "Ama e faz o que quiseres. Se calares, calarás com amor; se gritares, gritarás com amor; se corrigires, corrigirás com amor; se perdoares, perdoarás com amor. Se tiveres o amor enraizado em ti, nenhuma coisa senão o amor serão os teus frutos.",
+    "A medida do amor é amar sem medida.",
+    "A beleza é realmente um bom dom de Deus; mas que os bons não pensem que ela é um grande bem, pois Deus a distribui mesmo para os maus."])
 
   function onHandleSubmit() {
     event?.preventDefault()
@@ -42,7 +43,7 @@ function App() {
         </form>
       </header>
       <main className={styles.appMainSenction}>
-        <TaskSection />
+        <TaskSection taskContent={newText} />
       </main>
     </div >
   )
