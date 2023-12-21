@@ -4,9 +4,10 @@ import { TaskCard } from "./TaskCard";
 
 interface IProps {
     taskContent: string[];
+    deleteFunction: () => void
 }
 
-export function TaskSection({ taskContent }: IProps) {
+export function TaskSection({ taskContent, deleteFunction }: IProps) {
     return (
         <div className={styles.taskList}>
             <div className={styles.taskCounterContainer}>
@@ -19,7 +20,7 @@ export function TaskSection({ taskContent }: IProps) {
             </div>
             <div className={styles.tasksArea}>
                 {taskContent.length != 0 ? (
-                    taskContent.map((task: string) => <TaskCard content={task} />)
+                    taskContent.map((task: string) => <TaskCard content={task} deleteFunction={deleteFunction} />)
                 ) : (
                     <div>
                         <ClipboardText color={"var(--gray-400)"} size={56} />

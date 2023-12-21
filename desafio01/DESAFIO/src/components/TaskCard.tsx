@@ -4,14 +4,16 @@ import { useState } from "react";
 
 interface IProps {
   content: string;
+  deleteFunction: () => void;
 }
 
-export function TaskCard({ content }: IProps) {
+export function TaskCard({ content, deleteFunction }: IProps) {
+
+  const [taskStatus, setTaskStatus] = useState<boolean>(true);
+
   function handleTaskStatus() {
     setTaskStatus((state) => !state);
   }
-
-  const [taskStatus, setTaskStatus] = useState<boolean>(true);
 
   return (
     <div className={style.taskCard}>
@@ -36,7 +38,7 @@ export function TaskCard({ content }: IProps) {
       </div>
       <div>
         <button>
-          <Trash size={16} />
+          <Trash size={16} onClick={deleteFunction} />
         </button>
       </div>
     </div>
