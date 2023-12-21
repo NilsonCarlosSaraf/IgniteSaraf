@@ -35,6 +35,7 @@
     background: var(--gray-500);
     font-weight: bold;
     font-size: 16px;
+    color: var(--gray-200);
 
 }
 
