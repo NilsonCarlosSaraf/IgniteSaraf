@@ -7,7 +7,7 @@ export function TaskSection({ taskContent }) {
     return (
         <div className={styles.taskList}>
             <div className={styles.taskCounterContainer}>
-                <div className={styles.taskCounter1}>Tarefas Criadas <div>0</div></div>
+                <div className={styles.taskCounter1}>Tarefas Criadas <div>{taskContent.length}</div></div>
                 <div className={styles.taskCounter2}>Concluídas <div>2 de 5</div></div>
             </div>
             <div className={styles.tasksArea}>
