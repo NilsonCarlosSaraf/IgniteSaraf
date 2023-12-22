@@ -10,6 +10,8 @@ import http from 'node:http' //importacao atraves de ESMODULES
 
 // Cabecalhos (Requisicao/resposta) => Metadados / da informacoes de como o dado pode/deve ser interpretado pelo front end
 
+//HTTP Status Code
+
 const users = []
 
 const server = http.createServer((req, res) => {
@@ -28,10 +30,10 @@ const server = http.createServer((req, res) => {
             email: 'johndoe@example.com',
         })
 
-        return res.end('Criacao de usuario')
+        return res.writeHead(201).end()
     }
 
-    return res.end('Hello Worldfsdfsds')
+    return res.writeHead(404).end('Hello World')
 })
 
 server.listen(3333)
