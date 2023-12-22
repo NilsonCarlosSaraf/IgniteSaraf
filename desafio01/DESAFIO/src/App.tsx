@@ -48,7 +48,7 @@ function App() {
         </form>
       </header>
       <main className={styles.appMainSenction}>
-        <TaskSection taskContent={newText} />
+        <TaskSection deleteFunction={() => console.log(newText)} taskContent={newText} />
       </main>
     </div>
   );
